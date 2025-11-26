@@ -637,31 +637,20 @@
 //}
 
 //SNAKE_TO_CAMEL
-int is_in(char *str, char c, int limit)
-{
-  int i = 0;
-  while(i < limit)
-  {
-    if (str[i] == c)
-      return 1;
-    i++;
-  }
-  return 0;
-}
-
-int main(int argc, char **argv)
-{
-  if (argc == 2)
-  {
-    int i = 0;
-    while (argv[1][i])
-    {
-      if (argv[1][i] == '_')
-        argv[1][i + 1] = argv[1][i + 1] - 32;
-      else
-        write(1, &argv[1][i], 1);
-      i++;
-    }
-  }
-  write (1, "\n", 1);
-}
+// int main(int argc, char **argv)
+// {
+//   if (argc == 2)
+//   {
+//     int i = 0;
+//     while (argv[1][i])
+//     {
+//       if (argv[1][i] == '_')
+//         argv[1][i + 1] = argv[1][i + 1] - 32;
+//       else
+//         write(1, &argv[1][i], 1);
+//       i++;
+//     }
+//   }
+//   write (1, "\n", 1);
+// }
+//------------------------------------------------(LEVEL 3)--------------------------------------------------
