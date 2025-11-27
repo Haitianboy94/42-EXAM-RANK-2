@@ -654,3 +654,196 @@
 //   write (1, "\n", 1);
 // }
 //------------------------------------------------(LEVEL 3)--------------------------------------------------
+////ADD_PRIME_SUM
+//int ft_is_space(char c)
+//{
+//  return ((c >= 9 && c <= 13) || c == ' ');
+//}
+//
+//int ft_atoi(char *str)
+//{
+//  int i = 0;
+//  int result = 0;
+//  int sign = 1;
+//
+//  while (str[i] && ft_is_space(str[i]))
+//    i++;
+//  if (str[i] == '+' || str[i] == '-')
+//  {
+//    if (str[i] == '-')
+//      sign = - sign;
+//    i++;
+//  }
+//  while (str[i] >= '0' && str[i] <= '9')
+//  {
+//    result = result * 10 + (str[i] - '0');
+//    i++;
+//  }
+//  return result * sign;
+//}
+//
+//int ft_is_prime(int nbr)
+//{
+//  if (nbr == 2)
+//    return 1;
+//  if (nbr % 2 == 0 || nbr < 2)
+//    return 0;
+//  int i = 3;
+//  while (i <= nbr / 2)
+//  {
+//    if (nbr % i == 0)
+//      return 0;
+//    i++;
+//  }
+//  return 1;
+//}
+//
+//void ft_putchar(char c)
+//{
+//  write (1, &c, 1);
+//}
+//
+//void ft_putnbr(int nbr)
+//{
+//  if (nbr == -2147483648)
+//  {
+//    write (1, "-2147483648", 11);
+//    return;
+//  }
+//  if (nbr < 0)
+//  {
+//    ft_putchar('-');
+//    nbr = - nbr;
+//  }
+//  if (nbr > 9)
+//    ft_putnbr(nbr / 10);
+//  ft_putchar(nbr % 10 + '0');
+//}
+//
+//int main(int argc, char **argv)
+//{
+//  if (argc != 2 || ft_atoi(argv[1]) < 1)
+//  {
+//    write (1, "0\n", 2);
+//    return 0;
+//  }
+//  int number = ft_atoi(argv[1]);
+//  int sum = 0;
+//  while (number > 1)
+//  {
+//    if (ft_is_prime(number))
+//      sum = sum + number;
+//    number--;
+//  }
+//  ft_putnbr(sum);
+//  write (1, "\n", 1);
+//}
+
+////EPUR_STR
+//int main(int argc, char **argv)
+//{
+//  int i = 0;
+//  if (argc != 2 || argv[1][i] == '\0')
+//  {
+//    write (1, "\n", 1);
+//    return 0;
+//  }
+//  while (argv[1][i] && (argv[1][i] == ' ' || argv[1][i] == '\t'))
+//    i++;
+//  while (argv[1][i])
+//  {
+//    while (argv[1][i] && (argv[1][i] != ' ' && argv[1][i] != '\t'))
+//    {
+//      write (1, &argv[1][i], 1);
+//      i++;
+//    }
+//    while (argv[1][i] == ' ' || argv[1][i] == '\t')
+//      i++;
+//    if (argv[1][i])
+//      write (1, " ", 1);
+//  }
+//  write (1, "\n", 1);
+//}
+
+////EXPAND_STR
+//int main(int argc, char **argv)
+//{
+//  int i = 0;
+//  if (argc != 2 || argv[1][i] == '\0')
+//  {
+//    write(1, "\n", 1);
+//    return 0;
+//  }
+//  while (argv[1][i] && (argv[1][i] == ' ' || argv[1][i] == '\t'))
+//    i++;
+//  while (argv[1][i])
+//  {
+//    while (argv[1][i] != ' ' && argv[1][i] != '\t')
+//    {
+//      write (1, &argv[1][i], 1);
+//      i++;
+//    }
+//    while(argv[1][i] == ' ' || argv[1][i] == '\t')
+//      i++;
+//    if(argv[1][i])
+//      write(1, "   ", 3);
+//  }
+//  write (1, "\n", 1);
+//}
+
+//FT_ATOI_BASE
+// int	ft_atoi_base(const char *str, int str_base)
+// {
+//
+// }
+
+////LST_SIZE
+//typedef struct    s_list
+//{
+//    struct s_list *next;
+//    void          *data;
+//}                 t_list;
+//
+//int	ft_list_size(t_list *begin_list)
+//{
+//  int i = 0;
+//  while (begin_list -> next)
+//  {
+//    begin_list = begin_list -> next;
+//    i++;
+//  }
+//  return i;
+//}
+
+//FT_RANGE
+// int     *ft_range(int start, int end)
+// {
+//   int *fill;
+//   int len;
+//   int i = 0;
+//
+//   if (start > end)
+//     len = start - end;
+//   else if (start < end)
+//       len = end - start;
+//
+//   fill = malloc(sizeof(int) * len);
+//   while (start <= end)
+//   {
+//     fill[i] = start;
+//     i++;
+//     start++;
+//   }
+//   return fill;
+// }
+//
+// int main()
+// {
+//   int *res = ft_range(9, 13);
+//   int i = 0;
+//   while (i < 5)
+//   {
+//     printf("%d ", res[i]);
+//     i++;
+//   }
+// }
