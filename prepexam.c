@@ -791,10 +791,42 @@
 //  write (1, "\n", 1);
 //}
 
-//FT_ATOI_BASE
+////FT_ATOI_BASE
+// int basee(char c)
+// {
+//   if (c >= '0' && c<= '9')
+//     return (c - '0');
+//   else if (c >= 'a' && c <= 'f')
+//       return (c - 'a' + 10);
+//   else if (c >= 'A' && c <= 'F')
+//       return (c - 'A' + 10);
+//   return -1;
+// }
+//
 // int	ft_atoi_base(const char *str, int str_base)
 // {
+//   int i = 0;
+//   int sign = 1;
+//   int result = 0;
+//   int val;
 //
+//   while (str[1] && (str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
+//     i++;
+//   if (str[i] == '+' || str[i] == '-')
+//   {
+//     if (str[i] == '-')
+//       sign = - sign;
+//     i++;
+//   }
+//   while (str[i])
+//   {
+//     val = basee(str[i]);
+//     if (val < 0 || val >= str_base)
+//       break;
+//     result = result * str_base + val;
+//     i++;
+//   }
+//   return result * sign;
 // }
 
 ////LST_SIZE
@@ -847,3 +879,291 @@
 //     i++;
 //   }
 // }
+
+////ft_rrange
+// int     *ft_rrange(int start, int end)
+// {
+//   int len;
+//   int i = 0;
+//
+//   if ((end - start) < 0)
+// 	  len = ((end - start) * -1) + 1;
+//   else
+// 	  len = (end - start) + 1;
+//
+//   int *fill = malloc(sizeof(int) * len);
+//   while(start <= end)
+//   {
+//     fill[i] = end;
+//     i++;
+//     end--;
+//   }
+//   return fill;
+// }
+
+////hidenp
+//int ft_strlen(char *str)
+//{
+//  int i = 0;
+//
+//  while (str[i])
+//    i++;
+//  return i;
+//}
+//
+// int main(int argc, char **argv)
+// {
+//   if (argc == 3)
+//   {
+//     int i = 0;
+//     int j = 0;
+//     int count = 0;
+//     while (argv[1][i])
+//     {
+//       while(argv[2][j])
+//       {
+//         if (argv[1][i] == argv[2][j])
+//         {
+//           count = count + 1;
+//           break;
+//         }
+//         j++;
+//       }
+//       i++;
+//     }
+//     if (count == ft_strlen(argv[1]))
+//       write(1, "1\n", 2);
+//     else
+//       write(1, "0\n", 2);
+//   }
+//   write(1, "\n", 1);
+// }
+
+////LCM
+// unsigned int    lcm(unsigned int a, unsigned int b)
+// {
+//   unsigned int res;
+//   if (a > b)
+//     res = a;
+//   else
+//     res = b;
+//   if (a == 0 || b == 0)
+//     return 0;
+//
+//   while (1)
+//   {
+//     if ((res % a == 0) && (res % b == 0))
+//       return res;
+//     res++;
+//   }
+// }
+
+////paramsum
+// void ft_putchar(char c)
+// {
+//   write (1, &c, 1);
+// }
+//
+// void ft_putnbr_min(int nbr)
+// {
+//   if (nbr > 9)
+//     ft_putnbr_min(nbr / 10);
+//   ft_putchar(nbr % 10 + '0');
+// }
+//
+// int main(int argc, char **argv)
+// {
+//   (void)argv;
+//   if (argc == 1)
+//     write (1, "\n", 1);
+//   ft_putnbr_min(argc - 1);
+// }
+
+////pgcd
+// int main(int argc, char **argv)
+// {
+//   if (argc == 3)
+//   {
+//     int num1 = atoi(argv[1]);
+//     int num2 = atoi(argv[2]);
+//
+//     if (num1 > 0 && num2 > 0)
+//     {
+//       while (num1 != num2)
+//       {
+//         if (num1 > num2)
+//           num1 = num1 - num2;
+//         else if (num1 < num2)
+//             num2 = num2 - num1;
+//       }
+//       printf("%d", num1);
+//     }
+//   }
+//   printf("\n");
+// }
+
+////print_hex
+// unsigned int ft_atoi(char *str)
+// {
+//   unsigned int i = 0;
+//   int sign = 1;
+//   unsigned int result = 0;
+//
+//   while (str[i] && (str[i] >= 9 && str[i] <= 13 || (str[i] == ' ')))
+//     i++;
+//   if (str[i] == '+' || str[i] == '-')
+//   {
+//     if (str[i] == '-')
+//       sign = - sign;
+//     i++;
+//   }
+//   while (str[i] >= '0' && str[i] <= '9')
+//   {
+//     result = result * 10 + str[i] - '0';
+//     i++;
+//   }
+//   return result * sign;
+// }
+//
+// void print_hex(int nbr)
+// {
+//   char *digits = "0123456789abcdef";
+//   if (nbr >= 16)
+//     print_hex(nbr / 16);
+//   nbr = digits[nbr % 16];
+//   write(1, &nbr, 1);
+// }
+//
+// int main(int argc, char **argv)
+// {
+//   if (argc == 2)
+//   {
+//     print_hex(ft_atoi(argv[1]));
+//   }
+//   write(1, "\n", 1);
+// }
+
+////rstr_capitalize
+// void r_capitalizer(char *s)
+// {
+//     int i = 0;
+//
+//     while (s[i])
+//     {
+//         if (s[i] >= 'A' && s[i] <= 'Z')
+//             s[i] += 32;
+//
+//         if ((s[i] >= 'a' && s[i] <= 'z') && (s[i + 1] == '\0' || s[i + 1] == ' '))
+//             s[i] -= 32;
+//
+//         write(1, &s[i], 1);
+//         i++;
+//     }
+// }
+//
+// int main(int argc, char **argv)
+// {
+//   if (argc < 2)
+//   {
+//     write (1, "\n", 1);
+//     return 0;
+//   }
+//   int i = 1;
+//   while (i < argc)
+//   {
+//     r_capitalizer(argv[i]);
+//     write (1, "\n", 1);
+//     i++;
+//   }
+//   return 0;
+// }
+
+////str_capitalize
+// void str_capitalize(char *str)
+// {
+//   int i = 0;
+//   while(str[i])
+//   {
+//     if (str[i] >= 65 && str[i] <= 90)
+//       str[i] = str[i] + 32;
+//     if (str[i] >= 97 && str[i] <= 122 && (str[i - 1] == ' '))
+//         str[i] = str[i] - 32;
+//     write(1, &str[i], 1);
+//     i++;
+//   }
+// }
+//
+// int main(int argc, char **argv)
+// {
+//   if (argc < 2)
+//     write (1, "\n", 1);
+//   int i = 1;
+//   while(i < argc)
+//   {
+//     str_capitalize(argv[i]);
+//     write(1, "\n", 1);
+//     i++;
+//   }
+//   return 0;
+// }
+
+////Mult_tab
+// int ft_atoi_no_sign(char *str)
+// {
+//   int i = 0;
+//   int result = 0;
+//
+//   while(str[i] && (str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
+//     i++;
+//   while(str[i] >= '0' && str[i] <= '9')
+//   {
+//     result = result * 10 + str[i] - '0';
+//     i++;
+//   }
+//   return result;
+// }
+//
+// void ft_putchar(char c)
+// {
+//   write (1, &c, 1);
+// }
+//
+// void ft_putnbr(int nbr)
+// {
+//   if (nbr > 9)
+//     ft_putnbr(nbr / 10);
+//   ft_putchar(nbr % 10 + '0');
+// }
+//
+// void ft_putstr(char *str)
+// {
+//   int i = 0;
+//   while(str[i])
+//   {
+//     write(1, &str[i], 1);
+//     i++;
+//   }
+// }
+//
+// int main(int argc, char **argv)
+// {
+  // if (argc < 2)
+  // {
+  //   write(1, "\n", 1);
+  //   return 0;
+  // }
+//   int i = 1;
+//   int num = ft_atoi_no_sign(argv[1]);
+//   while(i <= 9)
+//   {
+//     ft_putnbr(i);
+//     ft_putstr(" X ");
+//     ft_putnbr(num);
+//     ft_putstr(" = ");
+//     ft_putnbr(i * num);
+//     write (1, "\n", 1);
+//     i++;
+//   }
+//   return 0;
+// }
+////---------------------------------------------(LEVEL 4)-------------------------------------------------
