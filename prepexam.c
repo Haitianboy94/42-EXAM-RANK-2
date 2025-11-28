@@ -1167,3 +1167,180 @@
 //   return 0;
 // }
 ////---------------------------------------------(LEVEL 4)-------------------------------------------------
+////flood_fill
+// void fill(char **tab, t_point size, char target, int row, int col)
+// {
+//   if (row < 0 || col < 0 || row >= size.y || col >= size.x)
+//     return;
+//   if (tab[row][col] != target)
+//     return;
+//   tab[row][col] = 'F';
+//   fill(tab, size, target, row - 1, col);
+//   fill(tab, size, target, row +1, col);
+//   fill(tab, size, target, row, col - 1);
+//   fill(tab, size, target, row, col + 1);
+// }
+//
+// void flood_fill(char **tab, t_point size, t_point begin)
+// {
+//     char target = tab[begin.y][begin.x];
+//     fill(tab, size, target, begin.y, begin.x);
+// }
+
+////fprime
+// int main(int argc, char **argv)
+// {
+//   if (argc ==2)
+//   {
+//     int num = atoi(argv[1]);
+//     int i = 2;
+//
+//     while (i <= num)
+//     {
+//      if (num % i == 0)
+//       {
+//        printf("%d", i);
+//        num = num / 2;
+//        if(num > i)
+//          printf("*");
+//       }
+//       else
+//        i++;
+//     }
+//     printf("\n");
+//   }
+// }
+
+// char *ft_strdup(char *str)
+// {
+//   int i = 0;
+//   char *res;
+//   int j = 0;
+//
+//   while (str[i])
+//     i++;
+//   res = malloc(sizeof(char) * i + 1);
+//   while(i >= 0)
+//   {
+//     res[j] = str[j];
+//     j++;
+//   }
+//   return res;
+// }
+//
+// int lenn(int n)
+// {
+//     int count = 0;
+//
+//     if (n == 0)
+//         return 1;
+//
+//     if (n < 0)
+//         n = -n;   // make it positive
+//
+//     while (n > 0)
+//     {
+//         n = n / 10;
+//         count++;
+//     }
+//     return count;
+// }
+//
+//
+// char	*ft_itoa(int n)
+// {
+// 	long	nb;
+// 	int		lenght;
+// 	char	*str;
+// 	int		sign;
+//
+// 	nb = n;
+// 	sign = (n < 0);
+// 	if (nb == -2147483648)
+// 		return (ft_strdup("-2147483648"));
+// 	if (sign)
+// 		nb = -nb;
+// 	lenght = lenn(nb) + sign;
+// 	str = (char *)malloc(sizeof(char) * lenght + 1);
+// 	if (!str)
+// 		return (NULL);
+// 	str[lenght] = '\0';
+// 	while (lenght > sign)
+// 	{
+// 		lenght--;
+// 		str[lenght] = (nb % 10) + '0';
+// 		nb = nb / 10;
+// 	}
+// 	if (sign)
+// 		str[0] = '-';
+// 	return (str);
+// }
+
+////ft_list_foreach
+// typedef struct    s_list
+// {
+//     struct s_list *next;
+//     void          *data;
+// }                 t_list;
+//
+//
+// void	ft_list_foreach(t_list *begin_list, void (*f)(void *))
+// {
+// 	while (begin_list != NULL)
+// 	{
+// 		if (begin_list->data != NULL)
+// 			(*f)(begin_list->data);
+// 		begin_list = begin_list->next;
+// 	}
+// }
+
+////ft_list_remove
+// void ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
+// {
+//     t_list *tmp;
+//
+//     if (begin_list == NULL || *begin_list == NULL)
+//         return;
+//
+//     if (cmp((*begin_list)->data, data_ref) == 0)
+//     {
+//         tmp = *begin_list;
+//         *begin_list = (*begin_list)->next;
+//         free(tmp);
+//         ft_list_remove_if(begin_list, data_ref, cmp);
+//     }
+//     else
+//         ft_list_remove_if(&((*begin_list)->next), data_ref, cmp);
+// }
+
+////rev_wstr
+// int main(int ac, char **av)
+// {
+//     if (ac != 2)
+//     {
+//         write(1, "\n", 1);
+//         return 0;
+//     }
+//     char *str = av[1];
+//     int i = 0;
+//     while (str[i])
+//         i++;
+//     int end = i;
+//     while (end > 0)
+//     {
+//         int start = end - 1;
+//         while (start >= 0 && str[start] != ' ')
+//             start--;
+//
+//         write(1, str + start + 1, end - start - 1);
+//
+//         if (start > 0)
+//             write(1, " ", 1);
+//
+//         end = start;
+//     }
+//
+//     write(1, "\n", 1);
+//     return 0;
+// }
+
