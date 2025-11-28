@@ -1194,14 +1194,14 @@
 //   {
 //     int num = atoi(argv[1]);
 //     int i = 2;
-//
+
 //     while (i <= num)
 //     {
 //      if (num % i == 0)
 //       {
 //        printf("%d", i);
-//        num = num / 2;
-//        if(num > i)
+//        num = num / i;
+//        if(num > 1)
 //          printf("*");
 //       }
 //       else
