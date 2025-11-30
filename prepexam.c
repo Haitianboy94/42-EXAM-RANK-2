@@ -318,7 +318,7 @@
 //   {
 //     i++;
 //   }
-//   return s1 - s2;
+//   return s1[i] - s2[i];
 // }
 
 // //ft_strcspn
